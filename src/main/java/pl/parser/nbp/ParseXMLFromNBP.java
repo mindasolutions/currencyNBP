@@ -102,11 +102,12 @@ public class ParseXMLFromNBP {
     }
 
     private List fileList(String startDate, String endDate, String currentYear) throws ParseException {
-        startDate = DateParse.parseDate(startDate);
-        endDate = DateParse.parseDate(endDate);
+
         try {
             String thisYear = Integer.toString(Calendar.getInstance().get(Calendar.YEAR));
             if (currentYear == null) {
+                startDate = DateParse.parseDate(startDate);
+                endDate = DateParse.parseDate(endDate);
                 currentYear = Integer.toString(Integer.parseInt(startDate.substring(0, 2)) + 2000);
             }
             if (thisYear.equals(currentYear)) {
