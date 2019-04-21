@@ -68,7 +68,7 @@ public class NbpFormatParser extends ParseConfig {
             doc.getDocumentElement().normalize();
             rates = doc.getElementsByTagName("pozycja");
         } catch (Exception e) {
-            throw new Exception("Response code: " + urlConnection.getResponseCode() + "\n" + e.getMessage());
+            throw new Exception("Response code: " + e.getMessage());
         }
 
         return rates;
