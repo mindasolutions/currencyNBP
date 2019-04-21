@@ -1,21 +1,11 @@
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import pl.parser.nbp.ParseXMLFromNBP;
+import pl.parser.nbp.NbpFormatParser;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class MyTests {
-    static ParseXMLFromNBP tester = new ParseXMLFromNBP();
-
-    @BeforeAll
-    public static void setUp() throws Exception {
-        // MyClass is tested
-
-        tester.setCurrency("eur");
-        tester.setDateFrom("2013-01-28");
-        tester.setDateTo("2013-01-31");
-    }
+    static NbpFormatParser tester = new NbpFormatParser("eur", "2013-01-28", "2013-01-31");
 
     @Test
     public void avgForCurrencyBidShouldHaveCorrectValue() throws Exception {

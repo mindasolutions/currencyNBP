@@ -1,18 +1,16 @@
 package pl.parser.nbp;
 
-import org.jetbrains.annotations.NotNull;
+import pl.parser.nbp.validate.Validate;
 
 public class MainClass {
 
-    public static void main(@NotNull String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
+        Validate.validateArgs(args);
         final String currency = args[0];
         final String dateFrom = args[1];
         final String dateTo = args[2];
 
-        ParseXMLFromNBP xml = new ParseXMLFromNBP();
-        xml.setCurrency(currency);
-        xml.setDateFrom(dateFrom);
-        xml.setDateTo(dateTo);
+        NbpFormatParser xml = new NbpFormatParser(currency, dateFrom, dateTo);
 
         Rates output = xml.getCurrencyBetweenDates();
 
