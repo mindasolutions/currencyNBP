@@ -4,7 +4,8 @@ import pl.parser.nbp.NbpFormatParser;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class MyTests {
+public class NbpFormatParserTest {
+
     static NbpFormatParser tester = new NbpFormatParser("eur", "2013-01-28", "2013-01-31");
 
     @Test

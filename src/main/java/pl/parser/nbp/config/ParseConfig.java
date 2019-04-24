@@ -11,7 +11,7 @@ public class ParseConfig {
 
 
     public ParseConfig(String currency, String dateFrom, String dateTo) {
-        this.currency = currency;
+        this.currency = currency.toUpperCase();
         this.dateFrom = dateFrom;
         this.dateTo = dateTo;
     }
